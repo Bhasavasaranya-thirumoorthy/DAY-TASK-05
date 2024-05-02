@@ -1,0 +1,121 @@
+                                              //DAY-05
+//1)
+//a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio,
+//  and a String representing the rating as its arguments, and sets the respective class properties to these values.       
+      
+class movies
+{
+   constructor(title,studio,rating)
+   {
+       this.title=title;
+       this.studio=studio;
+       this.rating=rating;
+   }
+
+//  b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+
+     static getPg(movie)
+        { 
+          let moviePg=[];
+          movie.forEach(element=> {
+           if(element.rating =="PG13")
+           {
+               moviePg.push(element);
+           }
+           else if(element.rating ="PG"){
+               moviePg.push(element);
+           }
+            });
+            return moviePg;
+       }
+}
+// d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, 
+// the studio “Eon Productions”, and the rating "PG13"
+
+let Movie1 = new movies("Casino Royale","Eon Productions","PG13");  
+let Movie2 = new movies("Beast","SunPictures");
+let Movie3 = new movies("Doctor","AGS Entertainment");
+
+//   c) Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input
+//    array with a rating of "PG". You may assume the input array is full of Movie instances. The returned array need not be full.
+
+let arr=[Movie1,Movie2,Movie3];
+let PGMovies=movies.getPg(arr);
+console.log(arr);  
+
+
+//2)circle
+class Circle {
+    constructor(radius, color) {
+      this.radius = radius;
+      this.color = color;
+    }
+  
+    getRadius() {
+      return this.radius;
+    }
+  
+    getColor() {
+      return this.color;
+    }
+  
+    getArea() {
+      return Math.PI * this.radius * this.radius;
+    }
+  
+    getCircumference() {
+      return 2 * Math.PI * this.radius;
+    }
+  }
+  
+  var c1 = new Circle(1.0, "red");
+  console.log(c1.getRadius());
+  console.log(c1.getColor());
+  console.log(c1.getArea());
+  console.log(c1.getCircumference());
+
+
+  //3)Write a “person” class to hold all the details.
+  class person{
+    constructor(name,email,age,qualification,place){
+        this.name=name;
+        this.email=email;
+        this.age=age
+        this.qualification=qualification;
+        this.place=place;
+    }
+}
+
+var c1=new person("Bhasava Saranya","bhasavasaranya08@gmail.com",23,"B.Tech","Coimbatore");
+console.log(c1)
+
+
+//4)4. write a class to calculate uber price.
+class Uber {
+    constructor(distance, hour, price) {
+      this.distance = distance;
+      this.hour = hour;
+      this.price = price;
+    }
+    
+    getPrice() {
+      return this.distance * this.hour * this.price;
+    }
+    
+    getTotalDistance() {
+      return this.distance;
+    }
+    
+    getTimeTravelled() {
+      return this.hour;
+    }
+  }
+  
+  var c1 = new Uber(70, 3, 18);
+  var c2 = new Uber(60, 2, 16);
+  
+  console.log(c1.getPrice());
+  console.log(c2.getPrice());
+  console.log(c1.getTotalDistance());
+  console.log(c2.getTimeTravelled());
+      
